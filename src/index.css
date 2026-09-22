@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-background: #05080f;
+  --color-surface: #0a111e;
+  --color-surface-2: #0e1728;
+  --color-foreground: #eef3fb;
+  --color-muted: #8a97ad;
+  --color-border: #1a2439;
+  --color-primary: #2b8cff;
+  --color-primary-bright: #4da3ff;
+  --color-primary-foreground: #04070d;
+
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+}
+
+@layer utilities {
+  /* mono technical label */
+  .kicker {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--color-primary-bright);
+  }
+  .glow-blue {
+    box-shadow: 0 0 0 1px rgba(43, 140, 255, 0.22), 0 10px 34px -14px rgba(43, 140, 255, 0.4);
+  }
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(43, 140, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(43, 140, 255, 0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  /* scrollbar hidden until scroll */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  *::-webkit-scrollbar { width: 10px; height: 10px; }
+  *::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 999px;
+  }
+  *:hover::-webkit-scrollbar-thumb { background: rgba(43,140,255,0.35); }
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}

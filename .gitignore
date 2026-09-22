@@ -1,0 +1,27 @@
+node_modules/
+dist/
+build/
+.cache/
+.env*
+.vite/
+vite.config.*.timestamp-*
+*.tsbuildinfo
+*-debug.log*
+logs/
+*.log
+.claude-replay.*
+.tmp-*
+/.figma/design-context/
+
+# Platform-managed agentplat state, not project source. In the
+# client-initiated single-repo workspace layout (make's `Path: "."` spec) the
+# repo root IS the workspace root, so these land inside this repo rather than
+# beside it.
+/.plugins/
+/.opencode-skills/
+
+# Raw client photo dumps not referenced by any component (kept locally
+# as a source pool for future galleries, not needed in the deployed site).
+/WhatsApp Unknown*/
+/WhatsApp Unknown*.zip
+/src/imports/

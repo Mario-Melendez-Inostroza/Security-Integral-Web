@@ -1,0 +1,10 @@
+{
+  "description": "Easily upload and manage images while automatically detecting and highlighting logos, streamlining brand monitoring for businesses and marketers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
