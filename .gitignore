@@ -25,3 +25,6 @@ logs/
 /WhatsApp Unknown*/
 /WhatsApp Unknown*.zip
 /src/imports/
+
+.vercel
+.env*
